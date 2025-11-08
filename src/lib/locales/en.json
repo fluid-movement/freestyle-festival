@@ -1,13 +1,42 @@
 {
-	"navigation": {},
+    "navigation": {
+		"home": "Home",
+		"schedule": "Schedule",
+		"participate": "Participate",
+		"disciplines": {
+			"title": "The Disciplines",
+			"description": "Discover the world of the disc",
+			"freestyle": "Artistic tricks and creative throws with the frisbee.",
+			"disc-golf": "Precision and power in a golf game with the frisbee.",
+			"double-disc-court": "A fast-paced game with two teams and two discs."
+		}
+	},
 	"home": {
-		"title": "Welcome to the Frisbee Festival"
+		"title": "Frisbee Festival München"
 	},
 	"disciplines": {
-		"title": "Meet the disciplines",
+		"title": "The Disciplines",
 		"card": {
-			"title": "Amazing title",
+			"title": "Really Interesting Text",
 			"content": "Frisbee is fun"
+		},
+		"freestyle": {
+			"what-is-it": {
+				"title": "What is Freestyle Frisbee?",
+				"content": "Freestyle Frisbee is the artistic discipline of frisbee sports, where teams of two to three players present a choreographed routine to music. Unlike Ultimate Frisbee or Disc Golf, it's not about points or goals, but about creativity, aesthetics, and technical perfection. Players develop spectacular throwing and catching techniques, combined with acrobatic elements and dance-like movements. A typical routine lasts three to five minutes and often tells a story through movement and music."
+			},
+			"art-of-movement": {
+				"title": "The Art of Movement",
+				"content": "What makes Freestyle Frisbee so special is the perfect fusion of sport, dance, and artistry. Every throw, every catch becomes a form of artistic expression. The disc is thrown under the leg, caught behind the back, or balanced on fingernails. Players perform jumps, rolls, and even somersaults while the frisbee glides through the air. The synchronization between team members must be perfect – like a pas de deux in ballet."
+			},
+			"teamwork-and-creativity": {
+				"title": "Teamwork and Creativity",
+				"content": "In Freestyle Frisbee, players merge into one unit. Every movement is coordinated, every trick builds on the previous one. The best teams develop their own style and constantly invent new combinations. Creativity knows no bounds: from elegant, flowing movements to explosive, powerful tricks – anything is possible. This creative freedom makes Freestyle Frisbee one of the most individual sports there is."
+			},
+			"more-than-sport": {
+				"title": "More Than Just a Sport",
+				"content": "Freestyle Frisbee is a way of life. The community is connected worldwide and shares a passion for this special art form. At competitions and jams, freestylers from all over the world meet to learn from each other, try new tricks, and play together. What matters is not just performance, but also the fun, the community, and the pure joy of moving with the disc."
+			}
 		}
 	}
 }

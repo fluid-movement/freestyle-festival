@@ -20,8 +20,7 @@
 
 <div class="flex min-h-screen flex-col">
 	<Header />
-	<Separator class="mb-8" />
-	<main class="flex flex-1 flex-col">
+	<main class="flex flex-1 flex-col gap-8 pb-16">
 		{@render children()}
 	</main>
 	<Separator />

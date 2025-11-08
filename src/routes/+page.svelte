@@ -1,10 +1,19 @@
 <script>
 	import Banner from '$lib/components/Banner.svelte';
 	import Grid from '$lib/components/Grid.svelte';
+	import ImageWithText from '$lib/components/ImageWithText.svelte';
+	import festivalImage from '$lib/assets/home/festival.jpg';
 	import { t } from '$lib/i18n.svelte';
 </script>
 
-<h1 class="container-custom mb-12 text-center">{$t('home.title')}</h1>
+
+<ImageWithText src={festivalImage} height="h-[60vh]">
+	<div class="text-white text-center">
+	<h1 class="container-custom mb-12 ">{$t('home.title')}</h1>
+		<p>1. - 2. August 2026</p>
+		<p>Sportschule Oberhaching</p>
+	</div>
+</ImageWithText>
 <Grid>
 	<article class="text-center">
 		<h2>Lorem Ipsum</h2>

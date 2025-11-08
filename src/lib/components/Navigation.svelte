@@ -4,6 +4,7 @@
 	import { cn } from '$lib/utils.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { resolve } from '$app/paths';
+	import { t } from '$lib/i18n.svelte';
 
 	type ListItemProps = HTMLAttributes<HTMLAnchorElement> & {
 		title: string;
@@ -39,14 +40,14 @@
 		<NavigationMenu.Item>
 			<NavigationMenu.Link>
 				{#snippet child()}
-					<a href={resolve('/')} class={navigationMenuTriggerStyle()}>Startseite</a>
+					<a href={resolve('/')} class={navigationMenuTriggerStyle()}>{$t('navigation.home')}</a>
 				{/snippet}
 			</NavigationMenu.Link>
 		</NavigationMenu.Item>
 		<NavigationMenu.Item>
 			<NavigationMenu.Link>
 				{#snippet child()}
-					<a href={resolve('/festival/schedule')} class={navigationMenuTriggerStyle()}>Programm</a>
+					<a href={resolve('/festival/schedule')} class={navigationMenuTriggerStyle()}>{$t('navigation.schedule')}</a>
 				{/snippet}
 			</NavigationMenu.Link>
 		</NavigationMenu.Item>
@@ -54,13 +55,13 @@
 			<NavigationMenu.Link>
 				{#snippet child()}
 					<a href={resolve('/festival/participation')} class={navigationMenuTriggerStyle()}
-						>Mitmachen</a
+						>{$t('navigation.participate')}</a
 					>
 				{/snippet}
 			</NavigationMenu.Link>
 		</NavigationMenu.Item>
 		<NavigationMenu.Item>
-			<NavigationMenu.Trigger>Die Sportarten</NavigationMenu.Trigger>
+			<NavigationMenu.Trigger>{$t('navigation.disciplines.title')}</NavigationMenu.Trigger>
 			<NavigationMenu.Content>
 				<ul class="grid gap-2 p-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
 					<li class="row-span-3">
@@ -69,9 +70,9 @@
 						>
 							{#snippet child({ props })}
 								<a {...props} href={resolve('/disciplines')}>
-									<div class="mt-4 mb-2 text-lg font-medium">Die Sportarten</div>
+									<div class="mt-4 mb-2 text-lg font-medium">{$t('navigation.disciplines.title')}</div>
 									<p class="text-sm leading-tight text-muted-foreground">
-										Entdecke die Welt der Scheibe
+									{$t('navigation.disciplines.description')}
 									</p>
 								</a>
 							{/snippet}
@@ -80,17 +81,17 @@
 					{@render ListItem({
 						href: '/disciplines/freestyle',
 						title: 'Freestyle',
-						content: 'Artistische Tricks und kreative Würfe mit der Frisbee.'
+						content: $t('navigation.disciplines.freestyle')
 					})}
 					{@render ListItem({
 						href: '/disciplines/disc-golf',
 						title: 'Disc Golf',
-						content: 'Das Golfspiel mit der Frisbee.'
+						content: $t('navigation.disciplines.disc-golf')
 					})}
 					{@render ListItem({
 						href: '/disciplines/double-disc-court',
 						title: 'Double Disc Court',
-						content: 'Ein schnelles Spiel mit zwei Teams und zwei Scheiben.'
+						content: $t('navigation.disciplines.double-disc-court')
 					})}
 				</ul>
 			</NavigationMenu.Content>
