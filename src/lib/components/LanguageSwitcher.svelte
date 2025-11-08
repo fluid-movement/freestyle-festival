@@ -11,7 +11,7 @@
 	}
 </script>
 
-<div class="flex gap-2">
+<div>
 	{#each languages as { code, label } (code)}
 		<button
 			onclick={() => switchLanguage(code)}

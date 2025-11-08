@@ -1,14 +1,15 @@
 <script lang="ts">
-	import * as NavigationMenu from '$lib/components/ui/navigation-menu/index.js';
+	import * as NavigationMenu from '$lib/components/ui/navigation-menu';
 	import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
 	import { cn } from '$lib/utils.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { resolve } from '$app/paths';
 	import { t } from '$lib/i18n.svelte';
 
+	type ValidRoute = Parameters<typeof resolve>[0];
 	type ListItemProps = HTMLAttributes<HTMLAnchorElement> & {
 		title: string;
-		href: string;
+		href: ValidRoute;
 		content: string;
 	};
 </script>
@@ -35,7 +36,7 @@
 	</li>
 {/snippet}
 
-<NavigationMenu.Root viewport={false}>
+<NavigationMenu.Root viewport={false} class="hidden md:block">
 	<NavigationMenu.List>
 		<NavigationMenu.Item>
 			<NavigationMenu.Link>
