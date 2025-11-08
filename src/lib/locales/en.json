@@ -1,0 +1,13 @@
+{
+	"navigation": {},
+	"home": {
+		"title": "Welcome to the Frisbee Festival"
+	},
+	"disciplines": {
+		"title": "Meet the disciplines",
+		"card": {
+			"title": "Amazing title",
+			"content": "Frisbee is fun"
+		}
+	}
+}

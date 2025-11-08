@@ -1,0 +1,13 @@
+{
+	"navigation": {},
+	"home": {
+		"title": "Willkommen zum Frisbee-Festival"
+	},
+	"disciplines": {
+		"title": "Die Sportarten",
+		"card": {
+			"title": "Wirklich interessanter Text",
+			"content": "Frisbee macht spaß"
+		}
+	}
+}
