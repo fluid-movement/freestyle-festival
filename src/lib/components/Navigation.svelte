@@ -5,7 +5,6 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { resolve } from '$app/paths';
 	import { t } from '$lib/i18n.svelte';
-	import Logo from './Logo.svelte';
 
 	type ValidRoute = Parameters<typeof resolve>[0];
 	type ListItemProps = HTMLAttributes<HTMLAnchorElement> & {
@@ -40,12 +39,11 @@
 <NavigationMenu.Root viewport={false} class="hidden md:block">
 	<NavigationMenu.List>
 		<NavigationMenu.Item>
-		    <Logo />
-		</NavigationMenu.Item>
-		<NavigationMenu.Item>
 			<NavigationMenu.Link>
 				{#snippet child()}
-					<a href={resolve('/festival/schedule')} class={navigationMenuTriggerStyle()}>{$t('navigation.schedule')}</a>
+					<a href={resolve('/festival/schedule')} class={navigationMenuTriggerStyle()}
+						>{$t('navigation.schedule')}</a
+					>
 				{/snippet}
 			</NavigationMenu.Link>
 		</NavigationMenu.Item>
@@ -68,9 +66,11 @@
 						>
 							{#snippet child({ props })}
 								<a {...props} href={resolve('/disciplines')}>
-									<div class="mt-4 mb-2 text-lg font-medium">{$t('navigation.disciplines.title')}</div>
+									<div class="mt-4 mb-2 text-lg font-medium">
+										{$t('navigation.disciplines.title')}
+									</div>
 									<p class="text-sm leading-tight text-muted-foreground">
-									{$t('navigation.disciplines.description')}
+										{$t('navigation.disciplines.description')}
 									</p>
 								</a>
 							{/snippet}

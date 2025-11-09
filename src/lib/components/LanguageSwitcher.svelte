@@ -1,25 +1,22 @@
 <script lang="ts">
 	import { locale } from '$lib/i18n.svelte';
+	import type { Locale } from '$lib/i18n.svelte';
+	import Button from './ui/button/button.svelte';
 
 	const languages = [
-		{ code: 'en', label: 'English' },
-		{ code: 'de', label: 'Deutsch' }
+		{ code: 'de', label: 'Deutsch' },
+		{ code: 'en', label: 'English' }
 	] as const;
 
-	function switchLanguage(lang: 'en' | 'de') {
+	function switchLanguage(lang: Locale) {
 		locale.set(lang);
 	}
 </script>
 
-<div>
+<div class="flex gap-4">
 	{#each languages as { code, label } (code)}
-		<button
-			onclick={() => switchLanguage(code)}
-			class="rounded px-3 py-1 transition-colors {$locale === code
-				? 'bg-primary text-primary-foreground'
-				: 'bg-secondary hover:bg-secondary/80'}"
-		>
+		<Button onclick={() => switchLanguage(code)} variant={$locale === code ? 'default' : 'outline'}>
 			{label}
-		</button>
+		</Button>
 	{/each}
 </div>

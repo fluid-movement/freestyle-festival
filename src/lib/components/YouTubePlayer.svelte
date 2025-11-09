@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { 
+	let {
 		videoId,
 		title = 'YouTube video',
 		class: className = ''

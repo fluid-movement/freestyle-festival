@@ -4,7 +4,7 @@
 	import '@fontsource/inter/600.css';
 	import '@fontsource/inter/700.css';
 	import '../app.css';
-	import { locale, t } from '$lib/i18n.svelte';
+	import { locale } from '$lib/i18n.svelte';
 	import type { Locale } from '$lib/i18n.svelte';
 	import favicon from '$lib/assets/favicon.ico';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
@@ -15,7 +15,6 @@
 
 	import * as Sidebar from '$lib/components/ui/sidebar';
 	import AppSidebar from '$lib/components/AppSidebar.svelte';
-	import { resolve } from '$app/paths';
 	import Logo from '$lib/components/Logo.svelte';
 
 	let { data, children }: LayoutProps = $props();
@@ -30,17 +29,15 @@
 </svelte:head>
 
 <Sidebar.Provider open={false}>
-	<div class="flex min-h-screen flex-col w-full">
-	    <AppSidebar />
-		<header class="flex justify-between px-8 py-4">
+	<div class="flex min-h-screen w-full flex-col">
+		<AppSidebar />
+		<header class="flex justify-between items-center px-8 py-4">
+		    <Logo />
 			<Navigation />
-			<div class="hidden md:flex gap-2">
-			    <LanguageSwitcher />
+			<div class="hidden gap-2 md:flex">
+				<LanguageSwitcher />
 			</div>
-			<div class="flex justify-between items-center w-full md:hidden">
-			    <Logo />
-			    <Sidebar.Trigger />
-			</div>
+			<Sidebar.Trigger class="md:hidden"/>
 		</header>
 		<main class="flex flex-1 flex-col gap-8 pb-16">
 			{@render children()}

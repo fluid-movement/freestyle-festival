@@ -5,7 +5,7 @@
 
 	let {
 		class: className = '',
-		width = 'w-18',
+		width = 'w-18'
 	}: {
 		class?: string;
 		width?: string;

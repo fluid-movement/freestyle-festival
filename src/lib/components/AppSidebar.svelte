@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Component } from 'svelte';
+	import type { Component } from 'svelte';
 	import CalendarIcon from '@lucide/svelte/icons/calendar';
 	import HouseIcon from '@lucide/svelte/icons/house';
 	import AwardIcon from '@lucide/svelte/icons/award';
@@ -15,9 +15,11 @@
 	type ListItemProps = HTMLAttributes<HTMLAnchorElement> & {
 		title: string;
 		href: ValidRoute;
-		icon: Component
+		icon?: Component;
+		subitem?: ListItemProps[];
 	};
-	const items: ListItemProps[] = [
+
+	let items: ListItemProps[] = $derived([
 		{
 			title: $t('navigation.home'),
 			href: '/',
@@ -34,14 +36,28 @@
 			icon: AwardIcon
 		},
 		{
-			title: $t('disciplines.title'),
+			title: $t('navigation.disciplines.title'),
 			href: '/disciplines',
-			icon: DiscIcon
+			icon: DiscIcon,
+			subitem: [
+				{
+					title: 'Freestyle',
+					href: '/disciplines/freestyle',
+				},
+				{
+					title: 'Disc Golf',
+					href: '/disciplines/disc-golf',
+				},
+				{
+					title: 'Double Disc Court',
+					href: '/disciplines/double-disc-court',
+				},
+			]
 		}
-	];
+	]);
 </script>
 
-<Sidebar.Root>
+<Sidebar.Root side="right">
 	<Sidebar.Content class="flex flex-col justify-between">
 		<Sidebar.Group>
 			<Sidebar.GroupLabel>{$t('home.title')}</Sidebar.GroupLabel>
@@ -57,6 +73,19 @@
 									</a>
 								{/snippet}
 							</Sidebar.MenuButton>
+							{#if item.subitem}
+								{#each item.subitem as subitem (subitem.title)}
+									<Sidebar.MenuSubItem class="ml-12">
+										<Sidebar.MenuSubButton>
+											{#snippet child({ props })}
+												<a href={resolve(subitem.href)} {...props}>
+													{subitem.title}
+												</a>
+											{/snippet}
+										</Sidebar.MenuSubButton>
+									</Sidebar.MenuSubItem>
+								{/each}
+							{/if}
 						</Sidebar.MenuItem>
 					{/each}
 				</Sidebar.Menu>

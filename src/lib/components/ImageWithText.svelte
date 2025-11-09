@@ -16,12 +16,12 @@
 		class?: string;
 	} = $props();
 
-	const backgroundStyle = overlay 
+	const backgroundStyle = overlay
 		? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${src}')`
 		: `url('${src}')`;
 </script>
 
-<div 
+<div
 	class={cn('flex items-center justify-center overflow-hidden px-4 text-center', height, className)}
 	style="background-image: {backgroundStyle}; background-size: cover; background-position: center;"
 >
