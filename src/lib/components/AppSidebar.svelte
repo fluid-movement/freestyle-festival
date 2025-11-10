@@ -5,6 +5,7 @@
 	import HouseIcon from '@lucide/svelte/icons/house';
 	import AwardIcon from '@lucide/svelte/icons/award';
 	import DiscIcon from '@lucide/svelte/icons/disc';
+	import MessageCircleQuestionMarkIcon from '@lucide/svelte/icons/message-circle-question-mark';
 	import * as Sidebar from '$lib/components/ui/sidebar';
 	import { resolve } from '$app/paths';
 	import { t } from '$lib/i18n.svelte';
@@ -56,9 +57,18 @@
 				{
 					title: 'Double Disc Court',
 					href: '/disciplines/double-disc-court'
+				},
+				{
+					title: 'Ultimate',
+					href: '/disciplines/ultimate'
 				}
 			]
-		}
+		},
+		{
+			title: 'FAQ',
+			href: '/faq',
+			icon: MessageCircleQuestionMarkIcon
+		},
 	]);
 </script>
 
