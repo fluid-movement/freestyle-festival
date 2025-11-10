@@ -60,7 +60,7 @@
 			<NavigationMenu.Trigger>{$t('navigation.disciplines.title')}</NavigationMenu.Trigger>
 			<NavigationMenu.Content>
 				<ul class="grid gap-2 p-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-					<li class="row-span-3">
+					<li class="row-span-4">
 						<NavigationMenu.Link
 							class="flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-hidden select-none focus:shadow-md"
 						>
@@ -90,6 +90,11 @@
 						href: '/disciplines/double-disc-court',
 						title: 'Double Disc Court',
 						content: $t('navigation.disciplines.double-disc-court')
+					})}
+					{@render ListItem({
+						href: '/disciplines/ultimate',
+						title: 'Ultimate',
+						content: $t('navigation.disciplines.ultimate')
 					})}
 				</ul>
 			</NavigationMenu.Content>
